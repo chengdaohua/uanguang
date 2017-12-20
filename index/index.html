@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>UanUang</title>
+    <meta name="description" content="UangUang" />
+    <meta name="keywords" content="UangUang" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="js/wow.min.js"></script> -->
+    <style>
+        body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, img, dl, dt, dd, table, th, td, blockquote, fieldset, div, strong, label, em, a, a, input, textarea, button {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            font-size: 100px;
+        }
+        body {
+            width: 100%;
+            font-size: .15rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        @media screen and (max-width: 600px) {
+            html {
+                font-size: 30px;
+            }
+            .navigation {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 600px) and (max-width: 800px) {
+            html {
+                font-size: 40px;
+            }
+            .navigation {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 800px) and (max-width: 1000px) {
+            html {
+                font-size: 50px;
+            }
+
+        }
+        @media screen and (min-width: 1000px) and (max-width: 1300px) {
+            html {
+                font-size: 70px;
+            }
+        }
+        @media screen and (min-width: 1300px) {
+            html {
+                font-size: 100px;
+            }
+        }
+
+        .banner {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .container {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0%;
+            z-index: 3;
+            background-color: white;
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+        .header {
+            width: 90%;
+            position: absolute;
+            padding: 0 5%;
+            top: 0;
+            left: 0;
+        }
+        .header div {
+            height: .36rem;
+            line-height: .36rem;
+            float: left;
+            color: white;
+            margin: .2rem 0;
+        }
+        .header .logo {
+            position: absolute;
+            width: 2rem;
+            height: .3rem;
+        }
+        .header .logo img {
+            width: 2rem;
+            height: .4rem;
+        }
+        .header .navigation {
+            width: 80%;
+            float: right;
+        }
+        .navigation a {
+            text-decoration: none;
+            display: block;
+            height: .36rem;
+            line-height: .36rem;
+            text-align: center;
+            padding: 0 .2rem;
+            float: right;
+            font-size: .18rem;
+            font-weight: 400;
+        }
+        .navigation a:hover {
+            color: #518EFF;
+        }
+        .header .salogn {
+            margin-top: 30%;
+            width: 100%;
+            height: .4rem;
+            line-height: .4rem;
+            font-size: .4rem;
+            text-align: center;
+        }
+        .content .step {
+            /*position: relative;*/
+            height: 3.4rem;
+            margin: .4rem 10%;
+        }
+        .steps {
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+        .steps li {
+            opacity: 0;
+            list-style: none;
+            text-decoration: none;
+            position: absolute;
+            width: 1.5rem;
+            height: 2.5rem;
+            text-align: center;
+            left: 0;
+            animation-delay:0;
+            -webkit-animation-delay:0; /* Safari 和 Chrome */
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            -webkit-transition-timing-function: ease;
+        }
+        .steps li span {
+            padding: 0;
+            display: block;
+            width: 160%;
+            height: .44rem;
+            line-height: .22rem;
+            font-size: .2rem;
+            margin: 0.4rem auto;
+            position: absolute;
+            top: 1.5rem;
+            left: -30%;
+        }
+        .steps li>img {
+            width: 1.5rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            margin: 0 auto;
+        }
+        .steps li i {
+            display: block;
+            height: 1.5rem;
+        }
+        .steps li i img {
+            display: block;
+            margin: 0 auto;
+            margin-top: .62rem;
+            height: .16rem;
+            width: .8rem;
+
+        }
+        .content .step .title {
+            font-weight: 700;
+            font-size: .3rem;
+            height: .4rem;
+            line-height: .4rem;
+            margin: .6rem 0;
+        }
+        .lastcontent {
+            height: 4rem;
+            padding: 1rem 10%;
+            overflow: hidden;
+            width: 80%;
+        }
+        .lastcontent a {
+            font-weight: 700;
+            font-size: .36rem;
+            line-height: .38rem;
+            display: block;
+            margin: .4rem 0;
+        }
+        .lastcontent p {
+            margin: .4rem 0;
+            display: block;
+            width: 100%;
+            line-height: .28rem;
+            font-size: .24rem;
+            text-align: justify;
+        }
+        .feature>div img {
+            width: 2rem;
+            height: 2rem;
+            display: block;
+            float: left;
+        }
+        .feature {
+            height: 2rem;
+            padding: 1rem 10%;
+            background-color: rgb(255,242,223);
+            overflow: hidden;
+            width: 80%;
+            
+        }
+        .left {
+            visibility:hidden
+        }
+        .left div {
+            padding: .25rem;
+            width: 70%;
+            float: left;
+        }
+        .left div a {
+            font-weight: 700;
+            font-size: .36rem;
+            height: .5rem;
+            line-height: .5rem;
+            display: block;
+        }
+        .left div p {
+            width: 100%;
+            height: .5rem;
+            line-height: .5rem;
+            font-size: .24rem;
+        }
+        .content .right {
+            background-color: white
+        }
+        .right>div img{
+            display: block;
+            float: right;
+        }
+        .right .left div {
+            /*width: 8rem;*/
+        }
+        .content .right>div p {
+            float: right;
+        }
+        .footer {
+            height: 2.24rem;
+            width: 100%;
+            position: relative;
+            background-color: rgb(72,77,80);
+        }
+        .footer .copyright {
+            position: absolute;
+            bottom: .44rem;
+            width: 100%;
+            text-align: center;
+            color: rgb(155,155,155);
+        }
+        .topHide {
+            z-index: 5;
+            display: none;
+            background-color: white;
+            box-shadow: 0 2px 5px #eee;  
+        }
+        .topHide .navigation {
+            color: black;
+            
+        }
+        .last-frame img{
+            width: 200px;
+            height: 200px;
+            float: left;
+            display: block;
+        }
+
+        /*动画*/
+        .pieces img {
+            width: 2rem;
+            height: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner"><img src="./img/bgimg.jpg" alt=""></div>
+    <div class="header click0">
+        <div class="logo"><img src="./img/logo.png" alt=""></div>
+        <div class="navigation">
+            <a>Hubungi Kami</a>
+            <a>Tentang UangUang</a>
+            <a>Kelebihan Kami</a>
+            <a>Proses Daftar</a>
+            <a>Halaman Utama</a>
+        </div>
+        <div class="salogn">UANGUANG  MEMBUAT  HIDUP  LEBIH  MUDAH</div>
+    </div>
+    <div class="header topHide">
+        <div class="logo"><img src="./img/logo1.png" alt=""></div>
+        <div class="navigation">
+            <a>Hubungi Kami</a>
+            <a>Tentang UangUang</a>
+            <a>kelebihan kami</a>
+            <a>Proses Daftar</a>
+            <a>Halaman Utama</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="step click1">
+                <div class="title">Dapat Pinjaman dalam 3 langkah mudah</div>
+                <ul class="steps">
+                    <li>
+                        <img src="./img/step1.png" alt="">
+                        <span>Download UangUang <br>di ponsel</span>
+                    </li>
+                    <li><i><img src="./img/lineTo.png" alt=""></i></li>
+                    <li>
+                        <img src="./img/step2.png" alt="">
+                        <span>Isi data pribadi Anda dengan mudah</span>
+                    </li>
+                    <li><i><img src="./img/lineTo.png" alt=""></i></li>
+                    <li>
+                        <img src="./img/step3.png" alt="">
+                        <span>Proses verifikasi dan pencairan dana yang cepat</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="feature click2">
+                <div class="left one">
+                    <img src="./img/group1.png" alt="">
+                    <div>
+                        <a>Jangka Waktu Pinjaman Singkat</a>
+                        <p>7-14 Hari</p>
+                        <p>Kebebasan Anda untuk memilih durasi pinjaman – lebih hemat uang</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature right">
+                <div class="left two">
+                    <img src="./img/group2.png" alt="">
+                    <div>
+                        <a>Nominal kecil</a>
+                        <p>600 ribu - 1 juta rupiah</p>
+                        <p>Bebas menentukan nominal yang ingin di pinjam - lebih hemat tenaga</p>
+                    </div>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="left three">
+                    <img src="./img/group3.png" alt="">
+                    <div>
+                        <a>Pinjaman cepat cair</a>
+                        <p></p>
+                        <p>Verifikasi data otomatis oleh BigData - lebih hemat waktu</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lastcontent click3">
+                <a>UangUang adalah perusahaan FinTech yang fokus pada konsumen kredit</a>
+                <p>UangUang mengandalkan teknologi internet yang canggih dan aman. Menggunakan BigData dan artificial intelligence/kecerdasan buatan yang membantu proses verifikasi data peminjam lebih cepat dan akurat. Memberikan rasa aman, kecepatan, dan kepercayaan layanan pinjaman kredit perbankan bagi sebagian besar kaum muda. Juga untuk membantu perkembangan ekonomi perbankan.</p>
+                <p>UangUang, daftar dengan mudah, proses verifikasi cepat, dana langsung cair, dan tanpa jaminan apapun Anda bisa mendapatkan akses pinjaman kredit perbankan dengan mudah.</p>
+            </div> 
+        </div>
+        <div class="footer click4">
+            <!-- <div class="tel">Hubungi Kami : (021)31927078</div> -->
+            <div class="copyright">Copyright © 2018 uanguang.id All rights reserved.</div>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var screenW=document.body.clientWidth;
+            // var screenH=window.screen.availHeight;
+            console.log(screenW)
+            var liWidth=$(".step ul").width()/5;
+            var container=$(".container").offset().top+100;
+            var one=$(".one").offset().top+100;
+            var two=$(".two").offset().top+100;
+            var three=$(".three").offset().top+100;
+            var lastcontent=$(".lastcontent").offset().top+300;
+            
+            for(var j=0;j<5;j++){
+                $('.steps li').eq(j).css("left",(liWidth)*(j-1)+80+"px");
+            }
+            function steps(){
+                var i=0;
+                setInterval(function(){
+                    if(i<5){
+                        $('.steps').children().eq(i).fadeIn().css({"left":(liWidth)*i+"px","opacity": 1});
+                        i++;
+                    }
+                }, 200);
+            }
+
+            for(var i=0;i<5;i++){
+                (function(count){
+                    $(".navigation").children().eq(count).click(function() {
+                        $(".click"+(4-count))[0].scrollIntoView();
+                    });
+                    $(".topHide .navigation").children().eq(count).click(function() {
+                        $(".click"+(4-count))[0].scrollIntoView();
+                    });
+                })(i);
+            }
+
+            var n=0;
+            if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth)
+            {
+            // var screenH = document.documentElement.clientHeight;
+            var screenW = document.documentElement.clientWidth;
+            var screenH =screenW*9/14.4;
+            }
+                // var screenH= document.body.offsetHeight;
+                console.log(screenH)
+                $(".container").css("top",screenH);
+                $(".banner").height=screenH;
+                $(".header").height=screenH;
+            if(screenW<500){
+                steps();
+                $(".one").css("visibility","visible").addClass("animated bounceInLeft");
+                $(".two").css("visibility","visible").addClass("animated bounceInRight");
+                $(".three").css("visibility","visible").addClass("animated bounceInLeft");
+                $(".lastcontent").addClass("animated zoomIn");
+                $(".logo img").height("16");
+                $(".logo img").width("80");
+                $(".header .logo").css("left","10px");
+                $(".steps span").css("font-size","6px");
+
+            }
+            // if(screenW>500){
+            //         var screenH=screen.availHeight;
+            //         console.log(screenH)
+            //         $(".container").css("top",screenH);
+            //         $(".banner").height=screenH;
+            //         $(".header").height=screenH;
+            // }
+            window.onscroll=function(){
+                var scrollTop = document.documentElement.scrollTop || window.pageYOfset ||document.body.scrollTop;
+                if(screenW>500){
+                    //步骤动画
+                    if(scrollTop>screenH/3){
+                        steps();
+                    }
+                    //feature动画
+                    if(scrollTop>one){
+                        $(".one").css("visibility","visible").addClass("animated bounceInLeft");
+                    }
+                    if(scrollTop>two){
+                        $(".two").css("visibility","visible").addClass("animated bounceInRight");
+                    }
+                    if(scrollTop>three){
+                        $(".three").css("visibility","visible").addClass("animated bounceInLeft");
+                    }
+                    if(scrollTop>lastcontent){
+                        $(".lastcontent").addClass("animated zoomIn");
+                    }
+                    if(scrollTop<screenH){
+                        $(".topHide").css({"display":"none","position":"fixed"});
+                        $(".banner").css("top",scrollTop*0.7+"px")
+
+                    }else{
+                        $(".topHide").css({"display":"block","position":"fixed"});
+
+                    }
+                }
+                
+            }
+
+            // try {
+            //     var id = 1263690787;  //站点ID
+            //     var url = "https://s22.cnzz.com/z_stat.php?id=" + id + "&web_id=" + id;
+
+            //     var addScript = document.createElement('script');
+            //     addScript.src = url;
+            //     var addDiv = document.createElement('div');
+            //     addDiv.style.display = 'none';
+            //     addDiv.appendChild(addScript);
+            //     document.body.appendChild(addDiv);
+            // }
+            // catch (e) {
+            // }
+        };
+    </script>
+</body>
+</html>
